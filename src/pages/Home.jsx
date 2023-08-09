@@ -1,11 +1,13 @@
-import { useState } from "react"
+import { useState,useEffect } from "react"
 import Carousel from "../components/Carousel"
+import axios from "axios"
 
 export default function Home() {
 
     const [show,setShow] = useState(true)
+    const [data,setData] = useState([])
 
-    let data = [
+  /*  let data = [
         { id: 'america1', city: "Cancun", photo: "/img/america/cancun.jpg" },
         { id: 'america2', city: "New York", photo: "/img/america/newyork.jpg" },
         { id: 'america3', city: "Rio de Janeiro", photo: "/img/america/rioDeJaneiro.jpg" },
@@ -22,8 +24,17 @@ export default function Home() {
         { id: 'oceania2', city: "Sidney", photo: "/img/oceania/sidney.jpg" },
         { id: 'oceania3', city: "Suva", photo: "/img/oceania/suva.jpg" },
         { id: 'oceania4', city: "Wellington", photo: "/img/oceania/wellington.jpg" }
-      ]
+      ];*/
 
+    useEffect(
+      ()=>{
+        axios('/data.json')
+         .then(res=>setData(res.data))
+         .catch(err=>console.log(err))
+      },
+      []
+    ) 
+    
     return (
         <main className="grow pt-10 mx-20 flex  justify-between items-center flex-wrap ">
             <div className="w-[25%] mr-[10px]">
@@ -33,11 +44,11 @@ export default function Home() {
                 
                 
             </div>
-            {show ? (<input onClick={()=> setShow(!show)} type="button" value="Hide"  className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded "/>) : (<input onClick={()=> setShow(!show)} type="button" value="Show"  className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"/>)}
+          {/*  {show ? (<input onClick={()=> setShow(!show)} type="button" value="Hide"  className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded "/>) : (<input onClick={()=> setShow(!show)} type="button" value="Show"  className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"/>)}
             
             {show ? <Carousel data={data} /> : <h1 className="text-[34px] text-center">Click View More</h1> }
-            
-            
+          */}
+            <Carousel data={data} />
         </main>
     )
 }
