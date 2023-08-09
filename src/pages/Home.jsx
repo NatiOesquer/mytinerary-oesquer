@@ -1,7 +1,9 @@
-import Arrow from "../components/Arrow"
-import CardPolaroid from "../components/CardPolaroid"
+import { useState } from "react"
+import Carousel from "../components/Carousel"
 
 export default function Home() {
+
+    const [show,setShow] = useState(true)
 
     let data = [
         { id: 'america1', city: "Cancun", photo: "/img/america/cancun.jpg" },
@@ -23,19 +25,19 @@ export default function Home() {
       ]
 
     return (
-        <main className="grow pt-10 ml-10 flex justify-center items-center flex-grawp m-10 ">
-            <div className="w-4/5 mr-[10px]">
+        <main className="grow pt-10 mx-20 flex  justify-between items-center flex-wrap ">
+            <div className="w-[25%] mr-[10px]">
                 <h1 className="text-[45px] font-extrabold mb-8">Find the perfect destination</h1>
                 <p className="mb-8 text-[30px]">Our app will help you find the perfect path for your next trip. With an easy-to-use interface and a host of itinerary options, planning your next trip has never been easier.</p>
                 <a href="#" className="px-10 bg-[#4F46E5]  p-2 rounded-lg text-white text-[25px]">View More</a>
+                
+                
             </div>
-            <div className="flex justify-center items-center">
-                <Arrow direction="M15.75 19.5L8.25 12l7.5-7.5" />
-                <div className="flex flex-grawp w-11/12 justify-center">
-                    {data.slice(0, 4).map(each => <CardPolaroid key={each.id} src={each.photo} alt={each.id} text={each.city} />)}
-                </div>
-                <Arrow direction="M8.25 4.5l7.5 7.5-7.5 7.5" />
-            </div>
+            {show ? (<input onClick={()=> setShow(!show)} type="button" value="Hide"  className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded "/>) : (<input onClick={()=> setShow(!show)} type="button" value="Show"  className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"/>)}
+            
+            {show ? <Carousel data={data} /> : <h1 className="text-[34px] text-center">Click View More</h1> }
+            
+            
         </main>
     )
 }

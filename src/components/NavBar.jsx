@@ -1,6 +1,7 @@
-
+import { useState } from "react"
 
 export default function NavBar() {
+  let [show,setShow] = useState(false)
   const nombre1 = 'My'
   const nombre2 = 'Tinerary'
 
@@ -17,7 +18,26 @@ export default function NavBar() {
             </svg>Login</a>
 
         </button>
+
       </nav>
+      <svg xmlns="http://www.w3.org/2000/svg" 
+           fill="none" 
+           viewBox="0 0 24 24" 
+           strokeWidth={1.5} 
+           stroke="currentColor" 
+           className="w-[60px] h-[60px] cursor-pointer rounded-xl bg-gray-200"
+           onClick={()=>setShow(!show)}
+           >
+        <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+      </svg>
+      {show ? (
+        <div className="flex ms-5 absolute top-[100px] right-[200px] flex-col gap-3 p-5 rounded bg-gray-400">
+        <p className="text-[20px] px-2 bg-gray-200 rounded-xl w-[100px] text-center mx-1">Home</p>
+        <p className="text-[20px] px-2 bg-gray-200 rounded-xl w-[100px] text-center mx-1">Cities</p>
+        <p className="text-[20px] px-2 bg-gray-200 rounded-xl w-[100px] text-center mx-1">LogIn</p>
+      </div>
+      ) : (null)}
+      
     </header>
   )
 }
