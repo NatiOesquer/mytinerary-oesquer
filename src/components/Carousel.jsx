@@ -38,7 +38,10 @@ export default function Carousel({ data }) {
                     key={each.id}
                     src={each.photo}
                     alt={each.id}
-                    text={each.city} />)}
+                    text={each.city} 
+                    id={each.id}
+                    />
+                    )}
             </div>
             <Arrow direction="M8.25 4.5l7.5 7.5-7.5 7.5" onClick={next_slide} />
         </div>
