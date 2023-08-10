@@ -2,6 +2,8 @@ import React from 'react'
 
 export default function Login() {
   return (
-    <div>Login under construction</div>
+    <div className='grow'>
+      <h1 className='text-black text-[40px] flex justify-center items-center'>Login under construction</h1>
+    </div>
   )
 }
