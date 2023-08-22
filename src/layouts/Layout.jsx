@@ -7,8 +7,8 @@ export default function Layout() {
   return (
     <div className="w-full min-h-screen flex flex-col bg-white
       sm:bg-white
-      md:bg-[url(./img/index.jpg)] bg-cover
-      lg:bg-[url(./img/index.jpg)] bg-cover">
+      md: bg-cover
+      lg:">
 
       <NavBar />
         <Welcome />
