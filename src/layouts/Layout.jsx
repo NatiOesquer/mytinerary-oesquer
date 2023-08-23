@@ -11,7 +11,7 @@ export default function Layout() {
       lg:">
 
       <NavBar />
-        <Welcome />
+       {/* <Welcome />*/}
         <Outlet />
       <Footer />
     </div>

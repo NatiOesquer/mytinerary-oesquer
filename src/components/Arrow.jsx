@@ -8,7 +8,7 @@ export default function Arrow({ direction,onClick }) {
         fill="none" viewBox="0 0 24 24" 
         strokeWidth={1.5} 
         stroke="currentColor" 
-        className="w-[100px] h-[100px] cursor-pointer bg-white font-extrabold"
+        className="w-[50px] h-[50px] cursor-pointer bg-white font-extrabold"
         onClick={onClick}>
         <path strokeLinecap="round" strokeLinejoin="round" d={direction} />
     </svg>
