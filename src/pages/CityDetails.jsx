@@ -6,25 +6,26 @@ import { Link as Anchor } from "react-router-dom"
 import NotFoundItinerary from "../components/NotFoundItinerary"
 import Features from "../components/Features"
 import Itinerary from "../components/Itinerary"
+import { useDispatch,useSelector } from "react-redux"
+import city_actions from "../store/actions/cities"
+const {read_city } = city_actions
+
 
 
 
 export default function CityDetails() {
     const { city_id } = useParams()
-    const [city, setCity] = useState([])
-
+    //const [city, setCity] = useState([])
+    const dispatch = useDispatch()
 
     useEffect(
         () => {
-            axios(apiUrl + 'cities/' + city_id)
-                .then(res => {
-                    setCity(res.data.response)
-                    console.log(city_id)
-                })
-                .catch(err => console.log(err))
+            dispatch(read_city({ id: city_id }))
         }, []
     )
 
+    const city = useSelector(store=> store.cities.city)
+    //console.log(city)
 
     return (
         <>
