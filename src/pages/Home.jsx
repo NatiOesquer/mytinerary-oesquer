@@ -35,7 +35,7 @@ export default function Home() {
 
     return (
       
-        <main className=" grow pt-10 mx-6 flex flex-raw justify-between items-center flex-wrap">
+        <main className=" pt-10 mx-6 flex flex-raw justify-between items-center flex-wrap">
           
             <div className="w-full md:w-[35%] mr-[10px] flex-wrap">
                 <h1 className="w-full text-[25px] md:text-[35px] font-extrabold mb-8 bg-gray-100">Find the perfect destination</h1>
