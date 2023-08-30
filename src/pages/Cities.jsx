@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
-import axios from 'axios'
-import apiUrl from '../apiUrl'
+//import axios from 'axios'
+//import apiUrl from '../apiUrl'
 import CardCity from '../components/CardCity'
 import NotFoundCard from '../components/NotFoundCard'
 import { useSelector, useDispatch } from 'react-redux'
