@@ -35,9 +35,9 @@ export default function Home() {
 
     return (
       
-        <main className=" pt-10 mx-6 flex flex-raw justify-between items-center flex-wrap">
+        <main className=" m-5 grow p-10 mx-6 flex flex-raw justify-between items-center flex-wrap" style={{ backgroundImage: `url(../img/index.jpg)` }}>
           
-            <div className="w-full md:w-[35%] mr-[10px] flex-wrap">
+            <div className="w-full md:w-[35%]  flex-wrap">
                 <h1 className="w-full text-[25px] md:text-[35px] font-extrabold mb-8 bg-gray-100">Find the perfect destination</h1>
                 <p className=" w-full text-[25px] mb-8 md:text-[25px] lg:text-[35px] bg-gray-100">Our app will help you find the perfect path for your next trip. With an easy-to-use interface and a host of itinerary options, planning your next trip has never been easier.</p>
                 <Anchor to="./cities" href="./" className="w-full px-10 bg-[#4F46E5] hover:bg-sky-200 hover:text-black p-2 rounded-lg text-white text-[25px]">View More</Anchor>
