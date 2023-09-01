@@ -17,12 +17,12 @@ export default function FormSignIn() {
     }
 
   return (
-    <form className="flex flex-col grow">
+    <form className="flex flex-col grow justify-center items-center w-4/5 ">
 
       <input 
       ref={mail_signin}
       type="text"
-      className="m-5 w-4/5 text-center underline"
+      className="m-5 py-4 w-[40%] text-center "
       name="mail_signin"
       id="mail_signin"
       defaultValue=""
@@ -30,14 +30,14 @@ export default function FormSignIn() {
       <input 
       ref={password_signin}
       type="text"
-      className="m-5 w-4/5 text-center underline"
+      className="m-5 py-4 w-[40%] text-center "
       name="password_signin"
       id="password_signin"
       defaultValue=""
       placeholder="Type Password" />
       <input
         type="button"
-        className="text-white text-center cursor-pointer"
+        className="text-white w-[40%] text-center bg-[#4F46E5] cursor-pointer"
         value="Sign In!"
         onClick={handleSignIn}
       />
