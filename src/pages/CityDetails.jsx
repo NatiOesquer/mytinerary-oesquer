@@ -1,10 +1,7 @@
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
-import axios from "axios"
-import apiUrl from "../apiUrl"
-import { Link as Anchor } from "react-router-dom"
 import NotFoundItinerary from "../components/NotFoundItinerary"
-import Features from "../components/Features"
+
 import Itinerary from "../components/Itinerary"
 import { useDispatch, useSelector } from "react-redux"
 import city_actions from "../store/actions/cities"
@@ -20,6 +17,10 @@ export default function CityDetails() {
     const { city_id } = useParams()
     //const [city, setCity] = useState([])
     const dispatch = useDispatch()
+    const city = useSelector(store => store.cities.city)
+    //console.log(city)
+    const itineraries = useSelector(store => store.itineraries.itineraries_from_city)
+    console.log(itineraries)
 
     useEffect(
         () => {
@@ -28,10 +29,7 @@ export default function CityDetails() {
         }, []
     )
 
-    const city = useSelector(store => store.cities.city)
-    //console.log(city)
-    const itineraries = useSelector(store => store.itineraries.itineraries_from_city)
-    console.log(itineraries)
+  
     return (
         <>
             <div className="h-[600px] grow flex flex-col items-center justify-center bg-no-repeat bg-center md:flex-wrap" style={{ backgroundImage: `url(${city.photo})` }}>
@@ -51,10 +49,25 @@ export default function CityDetails() {
 
                 </div>
             </div>
-           
-                <div>
-                    {show && itineraries.map(each => <Itinerary key={each._id} name={each.name} price={each.price} duration={each.duration} tags={each.tags} photo={each.photo} />)}
-                </div>
+            <div>
+                {show && (itineraries.length !== 0 ? (
+                    itineraries.map(each => (
+                        <Itinerary
+                            admin_id={each.city_id.admin_id.name}
+                            admin_photo={each.city_id.admin_id.photo}
+                            key={each._id}
+                            name={each.name}
+                            price={each.price}
+                            duration={each.duration}
+                            tags={each.tags}
+                            photo={each.photo}
+                        />
+                    ))
+                ) : (
+                    <NotFoundItinerary />
+                ))}
+            </div>
+            
 
         </>
     )

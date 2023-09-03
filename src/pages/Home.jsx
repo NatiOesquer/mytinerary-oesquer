@@ -35,7 +35,7 @@ export default function Home() {
 
     return (
       
-        <main className=" m-5 grow p-10 mx-6 flex flex-raw justify-between items-center flex-wrap" style={{ backgroundImage: `url(../img/index.jpg)` }}>
+        <main className=" m-5 grow p-10 mx-6 flex flex-raw justify-between bg-cover items-center flex-wrap" style={{ backgroundImage: `url(../img/index.jpg)` }}>
           
             <div className="w-full md:w-[35%]  flex-wrap">
                 <h1 className="w-full text-[25px] md:text-[35px] font-extrabold mb-8 bg-gray-100">Find the perfect destination</h1>
@@ -56,3 +56,4 @@ export default function Home() {
     )
 }
 
+ 

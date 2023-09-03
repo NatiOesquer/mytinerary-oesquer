@@ -37,7 +37,7 @@ export default function NavBar() {
       </svg>
       {show ? (
         <Display options={options} />
-      ) : (null)}
+      ) : (null)} 
       </nav>
      
 
