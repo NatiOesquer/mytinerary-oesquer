@@ -1,8 +1,21 @@
-
+import Label from "./Label"
+import Display from "./Display"
+import { useState } from "react"
+import IconLogin from "./IconLogin"
 
 export default function Footer() {
+
+    let [show, setShow] = useState(false)
+    let options = [
+        { to: '/', title: 'Home' },
+        { to: '/cities', title: 'Cities' },
+        { to: '/signin', title: 'Login', icon: <IconLogin />, backgroundColor: "#4F46E5", color: "white" }
+
+    ]
+
   return (
     <footer className="w-full h-[50px] bg-slate-300 flex items-center justify-center gap-5 flex-wrap">
+        <div className="w-full h-[50px] bg-slate-300 flex items-center justify-around gap-5">
             <svg className="w-6 h-6 text-gray-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 19">
                 <path fillRule="evenodd" d="M8.842 18.083a8.8 8.8 0 0 1-8.65-8.948 8.841 8.841 0 0 1 8.8-8.652h.153a8.464 8.464 0 0 1 5.7 2.257l-2.193 2.038A5.27 5.27 0 0 0 9.09 3.4a5.882 5.882 0 0 0-.2 11.76h.124a5.091 5.091 0 0 0 5.248-4.057L14.3 11H9V8h8.34c.066.543.095 1.09.088 1.636-.086 5.053-3.463 8.449-8.4 8.449l-.186-.002Z" clipRule="evenodd" />
             </svg>
@@ -16,6 +29,11 @@ export default function Footer() {
             <svg className="w-6 h-6 text-gray-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 14">
                 <path fillRule="evenodd" d="M19.7 3.037a4.26 4.26 0 0 0-.789-1.964 2.84 2.84 0 0 0-1.984-.84c-2.767-.2-6.926-.2-6.926-.2s-4.157 0-6.928.2a2.836 2.836 0 0 0-1.983.84A4.225 4.225 0 0 0 .3 3.038a30.148 30.148 0 0 0-.2 3.206v1.5c.01 1.071.076 2.142.2 3.206.094.712.363 1.39.784 1.972.604.536 1.38.837 2.187.848 1.583.15 6.731.2 6.731.2s4.161 0 6.928-.2a2.844 2.844 0 0 0 1.985-.84 4.27 4.27 0 0 0 .787-1.965c.124-1.064.19-2.135.2-3.206V6.243a30.672 30.672 0 0 0-.202-3.206ZM8.008 9.59V3.97l5.4 2.819-5.4 2.8Z" clipRule="evenodd" />
             </svg>
+
+            {show ? <Display options={options} /> : (null)}
+            <Label options={options} />
+            
+            </div>
         </footer>
   )
 }

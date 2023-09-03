@@ -32,8 +32,8 @@ export default function Carousel({ data }) {
     }
     return (
              
-        <div className="flex flex-col items-center w-[60%] flex-wrap">
-            <p className="text-3xl font-extrabold mt-6 ">Popular MyTineraries!</p>
+        <div className="flex flex-col items-center md:w-[60%] flex-wrap">
+            <p className="text-3xl text-white md:text-black font-extrabold mt-6 ">Popular MyTineraries!</p>
         <div className="flex justify-center items-center flex-wrap md:flex ">
             <Arrow direction="M15.75 19.5L8.25 12l7.5-7.5" onClick={prev_slide}/>
             <div className="flex grid grid-cols-2 p-2 m-2 justify-center items-center">
