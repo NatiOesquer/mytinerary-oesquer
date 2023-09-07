@@ -12,7 +12,7 @@ export default function NavBar() {
     {to:"/", title:"Home"},
     {to:"/cities", title:"Cities"},
     {
-      to:"/signin", 
+      to:"/auth/signin", 
       title:"Login",
       icon:<IconLogin />,
       backgroundColor:"#4F46E5",
