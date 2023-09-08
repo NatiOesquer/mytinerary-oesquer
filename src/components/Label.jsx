@@ -1,6 +1,7 @@
 import { Link as Anchor } from "react-router-dom"
 
 export default function Label({ options }) {
+  
   return (
     <div className=" hidden md:flex gap-2 rounded-xl">
     {options.map(each=> 
