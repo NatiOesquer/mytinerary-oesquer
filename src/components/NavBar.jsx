@@ -2,7 +2,11 @@ import { useState } from "react"
 import { Link as Anchor } from "react-router-dom"
 import Display from "./Display"
 import Label from "./Label"
-import IconLogin from "./IconLogin"
+
+import { useSelector, useDispatch } from "react-redux";
+import user_actions from "../store/actions/users"
+import LogIn_Out from "./LogIn_Out"
+const { signout } = user_actions
 
 export default function NavBar() {
   let [show, setShow] = useState(false)
@@ -11,20 +15,21 @@ export default function NavBar() {
   let options = [
     {to:"/", title:"Home"},
     {to:"/cities", title:"Cities"},
-    {
-      to:"/auth/signin", 
-      title:"Login",
-      icon:<IconLogin />,
-      backgroundColor:"#4F46E5",
-      color:"white"},
+  
   ]
+  
+  
+  
 
   return (
     <header className="flex justify-between px-4 pt-2 border-[6px] m-10 items-center  ">
       <h1 className="font-bold font-medium text-3xl m-[50px] hidden md:flex ">{`${nombre1} ${nombre2}`}</h1>
       <nav className="flex sm:justify-end space-x-4">
-    
-        <Label options={options} />
+      
+      
+
+       
+
         <svg xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
@@ -38,6 +43,8 @@ export default function NavBar() {
       {show ? (
         <Display options={options} />
       ) : (null)} 
+      <Label options={options} />
+      <LogIn_Out /> 
       </nav>
      
 
