@@ -14,7 +14,7 @@ const { read_itineraries_from_city } = itinerary_actions
 
 export default function CityDetails() {
     const [show, setShow] = useState(false)
-    
+
     const { city_id } = useParams()
     //const [city, setCity] = useState([])
     const dispatch = useDispatch()
@@ -30,7 +30,7 @@ export default function CityDetails() {
         }, []
     )
 
-  
+
     return (
         <>
             <div className="h-[600px] grow flex flex-col items-center justify-center bg-no-repeat bg-center md:flex-wrap" style={{ backgroundImage: `url(${city.photo})` }}>
@@ -70,10 +70,10 @@ export default function CityDetails() {
                 ))}
 
                 <div>
-            
+
                 </div>
             </div>
-            
+
 
         </>
     )
