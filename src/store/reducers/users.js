@@ -1,12 +1,13 @@
 import { createReducer } from "@reduxjs/toolkit";
 import user_actions from "../actions/users";
 
-const { read_user, signin, signin_token, signout } = user_actions
+const { read_user, signin, signin_token, signout,register,update_user } = user_actions
 
 const initial_state = {
     user: [],
     user: {},
-    token: ''
+    token: '',
+    messages: []
 
 }
 
@@ -27,7 +28,8 @@ const user_reducer = createReducer(
             let new_state = {
                 ...state,
                 user: action.payload.user,
-                token: action.payload.token
+                token: action.payload.token,
+                messages: action.payload.messages
             }
             return new_state
         }
@@ -48,6 +50,26 @@ const user_reducer = createReducer(
                 ...state,
                 user: action.payload.user,
                 token: action.payload.token
+            }
+            return new_state
+        }
+    ).addCase(
+        register.fulfilled,
+        (state,action)=>{
+            let new_state = {
+                ...state,
+                success:action.payload.success,
+                user:action.payload.user,
+                messages: action.payload.messages
+            }
+            return new_state
+        }
+    ).addCase(
+        update_user.fulfilled,
+        (state,action)=> {
+            let new_state = {
+                ...state,
+                user: action.payload.user
             }
             return new_state
         }

@@ -7,7 +7,7 @@ export default function Display({ options }) {
         <Anchor
           key={each.to}
           to={each.to}
-          className="text-[20px] px-2 bg-gray-200 rounded-xl w-[100px] text-center mx-1">
+          className="text-[20px] px-2 bg-gray-200  rounded-xl w-[100px] text-center mx-1">
           {each.title}</Anchor>)}
 
 

@@ -6,7 +6,7 @@ import Label from "./Label"
 import { useSelector, useDispatch } from "react-redux";
 import user_actions from "../store/actions/users"
 import LogIn_Out from "./LogIn_Out"
-const { signout } = user_actions
+const { signout } = user_actions 
 
 export default function NavBar() {
   let [show, setShow] = useState(false)
@@ -15,7 +15,7 @@ export default function NavBar() {
   let options = [
     {to:"/", title:"Home"},
     {to:"/cities", title:"Cities"},
-  
+   
   ]
   
   
