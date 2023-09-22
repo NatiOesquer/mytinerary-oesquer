@@ -126,6 +126,24 @@ const update_user = createAsyncThunk(
     }
 )
 
+const user_google = createAsyncThunk(
+    'user_google',
+    async (obj) => {
+        const data = obj.data ? obj.data : obj
+        if (data) {
+            localStorage.setItem('token', data.token)
+            localStorage.setItem('user', JSON.stringify(data.user))
+            window.location.reload();
+            return {
+                user: data.user,
+                token: data.token
+            }
+        }
+        return {
+            user: null
+        }
+    })
 
-const user_actions = { read_user, signin, signin_token, signout,register,update_user }
+const user_actions = { read_user, signin, signin_token, signout,register,update_user,user_google }
+
 export default user_actions
