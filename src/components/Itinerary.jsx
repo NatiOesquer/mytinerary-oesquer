@@ -4,13 +4,14 @@ import Bills from "./Bills"
 import LikeButton from "./LikeButton"
 
 
+
 export default function Itinerary({ name, price, duration, tags, photo, admin_id, admin_photo, id }) {
 
     const [show, setShow] = useState(false)
 
     const bill = Math.floor(price);
     const time = Math.floor(duration / 60)
-  
+    
 
     return (
         <main>
@@ -49,7 +50,7 @@ export default function Itinerary({ name, price, duration, tags, photo, admin_id
                         </div>
                     </div>
                     <div className="flex sm:w-[650px] h-[40px] mt-5 p-5 items-center justify-between w-[350px] h-[40px]">
-                        <LikeButton />
+                        <LikeButton id={id}/>
 
                         {show ? (<div onClick={() => setShow(!show)} className=" sm:flex"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" /></svg></div>) : (<div onClick={() => setShow(!show)} className=" sm:flex"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 cursor-pointer"><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg></div>)}
                     </div>
