@@ -1,7 +1,7 @@
 import { useState,useEffect } from "react"
 import Carousel from "../components/Carousel"
 import axios from "axios"
-import apiUrl from '../apiUrl.js'
+import apiUrl from '../../apiUrl.js'
 import { Link as Anchor } from "react-router-dom"
 import { useSelector,useDispatch } from "react-redux"
 import city_actions from "../store/actions/cities"
