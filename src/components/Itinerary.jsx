@@ -2,11 +2,12 @@ import { useState } from "react"
 import Activity from "./Activity"
 import Bills from "./Bills"
 import LikeButton from "./LikeButton"
+import Comments from "./Comments"
+import { useSelector,useDispatch } from 'react-redux';
 
 
-
-export default function Itinerary({ name, price, duration, tags, photo, admin_id, admin_photo, id }) {
-
+export default function Itinerary({ name, price, duration, tags, photo, admin_id, admin_photo, id}) {
+    const user = useSelector(store => store.users?.user);
     const [show, setShow] = useState(false)
 
     const bill = Math.floor(price);
@@ -56,6 +57,7 @@ export default function Itinerary({ name, price, duration, tags, photo, admin_id
                     </div>
                 </div>
                 {show && <Activity id={id} />}
+                <Comments id={id} user={user} />
 
             </div>
         </main>
