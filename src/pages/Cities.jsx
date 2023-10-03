@@ -30,7 +30,7 @@ export default function Cities() {
   return (
     <main className='flex flex-col grow'>
       <div className='h-[30vh] bg-cover bg-center justify-center items-center flex'
-        style={{ backgroundImage: `url(./img/welcome.jpg)` }}>
+        style={{ backgroundImage: `url(../img/welcome.jpg)` }}>
 
         <div className='flex flex-col justify-center w[20px] items-center'>
           <p className='text-5xl '>Cities</p>

@@ -45,7 +45,7 @@ export default function Profile() {
           <h1 className="text-4xl flex items-center justify-center mx-3 font-bold " >My Tinerary</h1>
 
         </div> */}
-      <div className="flex flex-col flex-grow items-center justify-center flex-wrap md:flex-row md:justify-evenly bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(./img/grass.webp)` }}>
+      <div className="flex flex-col flex-grow items-center justify-center flex-wrap md:flex-row md:justify-evenly bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(../img/grass.webp)` }}>
 
         <User user={user} show={show} setShow={setShow} />
         {show && (
