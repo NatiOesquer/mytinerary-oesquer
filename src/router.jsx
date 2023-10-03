@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import { createHashRouter } from "react-router-dom";
 import Home from "./pages/Home";
 import Layout from './layouts/Layout'
 import Profile from "./pages/Profile";
@@ -9,7 +10,7 @@ import FormSingUp from "./pages/FormSingUp";
 import FormSignIn from "./pages/FormSignIn";
 import NotFound from "./pages/NotFound";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
     {
         path: '/', 
         element: <Layout />,
