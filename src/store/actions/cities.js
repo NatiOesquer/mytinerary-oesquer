@@ -3,7 +3,7 @@ import axios from "axios";
 import apiUrl from "../../apiUrl";
 
 const read_carousel = createAsyncThunk(
-    'read carousel',
+    'read_carousel',
     async()=>{
         try {
            let data = await axios(apiUrl+'cities/carousel')
