@@ -45,7 +45,7 @@ export default function FormSignUp() {
                             showConfirmButton: false,
                             timer: 3500
                         })
-                        navigate('/signin')
+                        navigate('/auth/signin')
                     } else {
                         let html = response.payload.messages.map(each => (`<p>${each}</p>`)).join('');
                         console.log(html);
